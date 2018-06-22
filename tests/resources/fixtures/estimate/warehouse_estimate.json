@@ -1,0 +1,32 @@
+{
+  "estimates": [
+    {
+      "area": "Dry Bulk",
+      "value": 16.020901563524
+    },
+    {
+      "area": "Dry Loose",
+      "value": 10.042906078537
+    },
+    {
+      "area": "Fresh 2-5 FP",
+      "value": 10.313883938552
+    },
+    {
+      "area": "Fresh 2-5 JB",
+      "value": 16.391732156017
+    },
+    {
+      "area": "Fresh 6-10 FP",
+      "value": 7.343878156309
+    },
+    {
+      "area": "Frozen JB",
+      "value": 14.583361371847
+    },
+    {
+      "area": "TP",
+      "value": 5.418948157672
+    }
+  ]
+}

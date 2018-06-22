@@ -1,0 +1,52 @@
+[
+  {
+    "source_id" : "1",
+    "rpc" : "18809",
+    "transaction_date" : "2018-01-29T08:15:00.000Z",
+    "reference_id" : "1",
+    "internal_key" : "1",
+    "event_type" : "ADJUSTMENT",
+    "quantity": 10,
+    "direction" : "From"
+  },
+  {
+    "source_id" : "2",
+    "rpc" : "18810",
+    "transaction_date" : "2018-01-29T04:37:00.000Z",
+    "reference_id" : "2",
+    "internal_key" : "2",
+    "event_type" : "PO_PUT_AWAY",
+    "quantity": 15,
+    "direction" : "From"
+  },
+  {
+    "source_id" : "3",
+    "rpc" : "18811",
+    "transaction_date" : "2018-01-29T04:37:00.000Z",
+    "reference_id" : "3",
+    "internal_key" : "3",
+    "event_type" : "TRANSFER",
+    "quantity": 17,
+    "direction" : "To"
+  },
+  {
+    "source_id" : "4",
+    "rpc" : "18812",
+    "transaction_date" : "2018-01-29T04:37:00.000Z",
+    "reference_id" : "4",
+    "internal_key" : "4",
+    "event_type" : "LOCATE",
+    "quantity": 19,
+    "direction" : "To"
+  },
+  {
+    "source_id" : "5",
+    "rpc" : "18813",
+    "transaction_date" : "2018-01-29T08:15:00.000Z",
+    "reference_id" : "5",
+    "internal_key" : "5",
+    "event_type" : "UNLOCATE",
+    "quantity": 13,
+    "direction" : "From"
+  }
+]

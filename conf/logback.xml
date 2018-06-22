@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <property resource="application.common.conf" />
+
+  <if condition='property("NODE_ENV").contains("production") || property("NODE_ENV").contains("development")'>
+    <then>
+      <!-- Prod or Alpha-->
+      <property name="app_home" value="${application.home}"/>
+      <!-- Full info -->
+      <property name="PATTERN"
+                value="%magenta(%date{yyyy-MM-dd'T'HH:mm:ss.SSSZ}) %highlight(%-5level) %gray(${project.name}@${HOSTNAME}) %green(%15.15thread) %yellow([%mdc{X-Request-Id:--}]) %cyan(%logger{5}) - %msg%n" />
+      <!-- Use /data so logs survive across deployments. -->
+      <property name="FILE_PATH"                value="/data/logs/${project.name}/app.log" />
+      <property name="ROLLING_FILENAME_PATTERN" value="/data/logs/${project.name}/app.%d{yyyy-MM-dd}.log" />
+    </then>
+    <else>
+      <!-- Dev or Travis CI -->
+      <property name="app_home" value="."/>
+      <!-- Pattern should be shorter since we don't need full year, timezone, complete Request IDs, service/host name, etc.-->
+      <property name="PATTERN"
+                value="%magenta(%date{yy-MM-dd'T'HH:mm:ss.SSS}) %highlight(%-5level) %green(%10.10thread) %yellow([%-0.-8mdc{X-Request-Id:--}]) %cyan(%logger{5}) - %msg%n" />
+      <!-- no /data directory there! -->
+      <property name="FILE_PATH"                value="${app_home}/logs/app.log" />
+      <property name="ROLLING_FILENAME_PATTERN" value="${app_home}/logs/app.%d{yyyy-MM-dd}.log" />
+    </else>
+  </if>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <withJansi>true</withJansi>
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <charset>UTF-8</charset>
+      <Pattern>
+        ${PATTERN}
+      </Pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${FILE_PATH}</file>
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <charset>UTF-8</charset>
+      <Pattern>
+        ${PATTERN}
+      </Pattern>
+    </encoder>
+
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${ROLLING_FILENAME_PATTERN}</fileNamePattern>
+      <maxHistory>7</maxHistory>
+    </rollingPolicy>
+  </appender>
+
+  <root level="INFO">
+    <!-- TODO: Look into Async appenders for efficiency. -->
+    <appender-ref ref="FILE" />
+    <appender-ref ref="STDOUT" />
+  </root>
+
+  <!-- TODO: Define logging levels per environment -->
+
+  <logger name="play" level="INFO" />
+  <logger name="application" level="INFO" />
+  <logger name="utils" level="INFO" />
+  <logger name="org.mongodb" level="WARN" />
+
+  <!-- TODO: Split up test logging config-->
+  <logger name="de.flapdoodle.embed.mongo.MongodProcess" level="WARN" />
+</configuration>

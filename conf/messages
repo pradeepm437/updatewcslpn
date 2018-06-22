@@ -1,0 +1,5 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+
+example.not.found=Could not find that example.
+example.found=Found the example.

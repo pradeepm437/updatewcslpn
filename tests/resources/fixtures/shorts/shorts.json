@@ -1,0 +1,24 @@
+[
+  {
+    "rpc":18809,
+    "productName":"Item1",
+    "productSales":10,
+    "productOpening":15,
+    "pendingPutaway":5,
+    "expiryDate":"2018-01-29 00:00:00.0",
+    "custometExpiryDate":"2018-01-29 00:00:00.0",
+    "shelfLife":5,
+    "isAtp":true
+  },
+  {
+    "rpc":18812,
+    "productName":"Item4",
+    "productSales":16,
+    "productOpening":24,
+    "pendingPutaway":8,
+    "expiryDate":"2018-01-28 00:00:00.0",
+    "custometExpiryDate":"2018-01-28 00:00:00.0",
+    "shelfLife":8,
+    "isAtp":false
+  }
+]

@@ -1,0 +1,10 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Health Check
+GET     /health                                            com.redmart.micro.updatewcslpn.controllers.Application.healthCheck()
+
+# Version 1.0
+# Updates WCS LPN on to Shiiping Container
+GET     /v1.0/wcs/updatewcslpn/:wcslpn/:container          com.redmart.micro.updatewcslpn.controllers.UpdateWcsLpnController.updateWcsLpnonShippingContainer(wcslpn: String, container: String)

@@ -1,0 +1,17 @@
+#  This file lists mandatory reviewers for this repo, one username per line.
+#
+#   If you are not on the reviewers list you may only make changes in this repo via a pull request
+#   to one or more engineers in this file.
+#
+#   You are also strongly encouraged to:
+#   1. Do a design review with a reviewer before starting to write code for any non-trivial change.
+#   2. Think ahead and break up your changes into small pieces (1-2 days of work). Create a 
+#       separate review for each one.
+#   
+#   If you are a reviewer it is your responsibility to provide feedback in a timely manner. It's a good
+#   idea to set aside time each morning to look at reviews from the day before.
+#   
+#   As a reviewer it is also your responsibility to be an enabler rather than a roadblock.
+#   Do not just say: "Don't do that". Instead say: "Here is a better way of accomplishing your goal."
+
+aditi01
