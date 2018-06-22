@@ -1,1 +1,0 @@
-drop table V_Last2Hour_From_TransHistory;

@@ -1,1 +1,0 @@
-drop table RDMT_Variable_Putaway;
